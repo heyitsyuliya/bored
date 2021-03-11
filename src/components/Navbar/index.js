@@ -7,7 +7,7 @@ export default function index() {
   return (
     <Navbar bg="light">
       <Navbar.Brand href="#home">
-        <img src={bored} />
+        <img src={bored} alt="yawning face" />
       </Navbar.Brand>
 
       <Nav className="mr-auto">
