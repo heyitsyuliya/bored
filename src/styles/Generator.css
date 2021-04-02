@@ -1,0 +1,9 @@
+.wrapper {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+#random-activity {
+}
