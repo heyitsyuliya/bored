@@ -1,39 +1,34 @@
-import {
-  Container,
-  Card,
-  Table,
-  ListGroup,
-  ListGroupItem,
-} from "react-bootstrap";
+import { Container, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import React from "react";
 import "../../styles/Generator.css";
 
 export default function RandomActivity(props) {
+  const activity = props.activity.activity.toLowerCase();
+  const participants = props.activity.participants;
+  const price = props.activity.price;
+  const link = props.activity.link;
+
   return (
     <Container id="random-activity">
       <Card>
         <Card.Body>
-          <Card.Title>You can {props.activity.activity}</Card.Title>
+          <Card.Title>You can {activity}</Card.Title>
+
           <ListGroup>
             {/* participants */}
             <ListGroupItem>
               👯
-              {props.activity.participants === 1
-                ? "1 person"
-                : `${props.activity.participants} people `}
+              {participants === 1 ? "1 person" : `${participants} people `}
             </ListGroupItem>
 
             {/* cost */}
-            <ListGroupItem>
-              💸
-              {props.activity.price === 0 ? `$${props.activity.price}` : null}
-            </ListGroupItem>
+            {price ? <ListGroupItem>💸 ${price}</ListGroupItem> : null}
 
             {/* link */}
-            {props.activity.link ? (
+            {link ? (
               <ListGroupItem>
                 🔗
-                <a href={props.activity.link}>click me</a>
+                <a href={link}>click me</a>
               </ListGroupItem>
             ) : null}
           </ListGroup>
