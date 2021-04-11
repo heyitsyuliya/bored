@@ -1,8 +1,9 @@
-// import axios from 'axios';
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import "../../styles/Generator.css";
+import RandomActivity from "./RandomActivity";
+import EmptyState from "../EmptyState";
+import axios from "axios";
 
 export default function Generator() {
   const [state, setState] = useState([]);
@@ -39,21 +40,11 @@ export default function Generator() {
   return (
     <>
       <Container className="wrapper" fluid>
-        <Container id="random-activity">
-          <p>You can {state.activity}</p>
-          <p>
-            with{" "}
-            {state.participants === 1
-              ? "1 person "
-              : `${state.participants} people `}
-          </p>
-          <p>{state.price === 0 ? "and it's free!" : null}</p>
-          {state.link ? (
-            <p>
-              Here's the <a href={state.link}>link</a>
-            </p>
-          ) : null}
-        </Container>
+        {state.length === 0 ? (
+          <EmptyState />
+        ) : (
+          <RandomActivity activity={state} />
+        )}
       </Container>
     </>
   );
