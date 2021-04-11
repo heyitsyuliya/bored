@@ -4,8 +4,9 @@ import "../../styles/Generator.css";
 
 export default function RandomActivity(props) {
   const activity = props.activity.activity.toLowerCase();
+  const type = props.activity.type;
   const participants = props.activity.participants;
-  const price = props.activity.price;
+  const price = props.activity.price * 100;
   const link = props.activity.link;
 
   return (
@@ -15,6 +16,12 @@ export default function RandomActivity(props) {
           <Card.Title>You can {activity}</Card.Title>
 
           <ListGroup>
+            {/* type */}
+            <ListGroupItem>
+              🤝
+              {type}
+            </ListGroupItem>
+
             {/* participants */}
             <ListGroupItem>
               👯
