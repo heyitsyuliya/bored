@@ -1,6 +1,12 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import "../../styles/EmptyState.css";
 
 export default function EmptyState() {
-  return <Card>Hit Space bar to generate new suggestion.</Card>;
+  return (
+    <>
+      <div id="landing-page">
+        <h4>Hit space bar to generate new suggestion.</h4>
+      </div>
+    </>
+  );
 }

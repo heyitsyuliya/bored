@@ -1,0 +1,13 @@
+#landing-page {
+  animation: breathe 2s ease-in-out;
+}
+
+@keyframes breathe {
+  from {
+    top: 0px;
+  }
+
+  to {
+    top: 100px;
+  }
+}

@@ -1,6 +1,6 @@
 import { Container, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import React from "react";
-import "../../styles/Generator.css";
+import "../../styles/RandomActivity.css";
 
 export default function RandomActivity(props) {
   const activity = props.activity.activity.toLowerCase();
